@@ -1,0 +1,7 @@
+eza otf-fira-code otf-firacode-nerd less
+ttc-iosevka ttf-roboto
+ttf-liberation
+wget https://use.fontawesome.com/releases/v6.5.2/fontawesome-free-6.5.2-desktop.zip
+zip unzip
+ttf-font-awesome
+yay -S adobe-base-14-fonts

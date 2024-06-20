@@ -1,0 +1,11 @@
+# This is not a transferable thing,
+# Made it just for my laptop running Fedora.
+
+# dotnet (.dotnet/)
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+
+# GoLang
+export GOPATH="$XDG_DATA_HOME"/go
+
+# GTK 2.0
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc

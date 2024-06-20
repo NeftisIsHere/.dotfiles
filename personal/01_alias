@@ -1,0 +1,11 @@
+alias poweroff='shutdown 0'
+alias systemlogs='journalctl -b'
+
+alias ls='exa --icons -a --group-directories-first --color=auto'
+alias la='exa -la'
+
+
+# More color!
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip -color=auto'

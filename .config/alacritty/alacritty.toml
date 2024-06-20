@@ -1,0 +1,23 @@
+live_config_reload = true
+
+# My theme
+import = [
+  "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
+  # "~/dotfiles/.config/alacritty/themes/catppuccin_mocha.toml"
+]
+
+[window]
+dynamic_title = true
+padding = { x = 5, y = 5 }
+dynamic_padding = true
+opacity = 0.8
+blur = true
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+[scrolling]
+history = 1000
+multiplier = 2
+[font]
+# normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
+normal = { family = "Fira Mono Nerd Font", style = "Regular" }

@@ -1,0 +1,100 @@
+{
+// ------------------------------------------------------------------- 
+// Left Modules
+// ------------------------------------------------------------------- 
+	"wlr/workspaces": {
+		"on-click": "activate",
+		"all-outputs": true,
+	},
+
+// ------------------------------------------------------------------- 
+// Center Modules
+// ------------------------------------------------------------------- 
+	"hyprland/window": {
+		"max-length": 120,
+		"rewrite": {
+		"^(.*) — (?:Mozilla Firefox|Firefox Developer Edition)( Private Browsing)?$": "$1",
+		"^(.*) - Discord$": "$1",
+		"^(.*) • - Sublime Text$": "$1",
+		"^(.*) - Code - OSS$": "$1"
+		}
+	},
+
+// ------------------------------------------------------------------- 
+// Right Modules
+// ------------------------------------------------------------------- 
+	"idle_inhibitor": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon} {volume}% {format_source}",
+        "format-muted": " {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": " {icon}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+	"backlight": {
+		"tooltip": false,
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["", "", "", "", "", "", "", "", ""]
+	},
+	
+	"network": {
+        // "format-wifi": "{essid} ({signalStrength}%)",
+        // "format-ethernet": "{ipaddr}/{cidr}",
+        "format": "",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ifname} via {gwaddr}",
+    },
+	// Battery
+    "battery": {
+        "states": {
+            "good": 85,
+            "warning": 40,
+            "critical": 30
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+	      "interval": 1
+    },
+
+	"clock": {
+        "tooltip": false,
+        "format": "{:%I:%M:%S %p %d/%m/%y}",
+        "interval": 1
+    },
+
+	"tray": {
+	    "icon-size": 21,
+	    "spacing": 10
+	}, 
+
+	//WLogout
+	"custom/exit": {
+		"format": "",
+		"on-click": "wlogout",
+		"tooltip": false
+	}	
+
+}
