@@ -6,7 +6,7 @@ fastfetch
 
 # just boring stuffs
 if [ -d ~/.dotfiles ]; then
-    for rc in $DOTFILES/personal/*; do
+    for rc in $dotfiles/personal/*; do
         if [ -f "$rc" ]; then
             . "$rc"
         fi

@@ -1,6 +1,10 @@
 # This is not a transferable thing,
-# Made it just for my laptop running Fedora.
+# Made it just for my laptop.
 
+# Bash things
+HISTFILE="$XDG_STATE_HOME"/bash/history
+HISTSIZE=1000
+SAVEHIST=1000
 # dotnet (.dotnet/)
 export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
 

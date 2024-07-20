@@ -1,31 +1,34 @@
 #
 # ~/.bashrc
 #
-if [ -d ~/.dotfiles ]; then
-    export DOTFILES="$HOME/.dotfiles"
-    export ZDOTDIR="$DOTFILES/.config/zsh/"
-else
-    export XDG_CONFIG_HOME="$HOME/.config"
-    export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-fi
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
+
 fi
 
+export ELECTRON_OZONE_PLATFORM_HINT=wayland 
+# Setting dotfiles & reading 
 if [ -d ~/.dotfiles ]; then
-    export DOTFILES="$HOME/.dotfiles"
-    for rc in $DOTFILES/personal/*; do
+    export dotfiles="$HOME"/.dotfiles
+    export dotconf="$dotfiles"/.config
+    export ZDOTDIR="$dotfiles"/.config/zsh/
+
+    for rc in "$dotfiles"/personal/*; do
         if [ -f "$rc" ]; then
-	    . "$rc"
-	fi
+    	. "$rc"
+        fi
     done
+
+    unset rc
 fi
+
 
 PS1='[\u@\h \W]\$ '
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 # Important, never remove
 fastfetch
