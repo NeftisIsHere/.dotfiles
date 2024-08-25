@@ -5,5 +5,5 @@ killall waybar
 # ------------------------------------------------------------------- 
 # Load the configuration
 # ------------------------------------------------------------------- 
-waybar -c "$dotfiles"/.config/waybar/config -s "$dotfiles"/.config/waybar/style.css
+waybar -c "$dotconf"/waybar/config -s "$dotconf"/waybar/style.css
 

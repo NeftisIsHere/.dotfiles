@@ -40,4 +40,4 @@ _comp_options+=(globdots)		# Include hidden files.
 # Spaceship prompt
 # ----------------
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-source /usr/lib/spaceship-prompt/spaceship.zsh
+eval "$(starship init zsh)"

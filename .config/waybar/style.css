@@ -99,13 +99,13 @@ label:focus {
     color: #9d0006;
 }
 
-#pulseaudio {
+#wireplumber {
     color: #FABD2F;
     padding-left: 2px;
     padding-right: 5px;
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
     background-color: #fbf1c7;
     color: #af3a03;
 }

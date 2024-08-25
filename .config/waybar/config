@@ -14,11 +14,12 @@
     "modules-center": [],
     
     "modules-right": [
-        "tray",
+    "tray",
 	"keyboard-state", // #98971A
-	"pulseaudio", // #D79921
+	"wireplumber", // #D79921
 	"network", // #458588
 	"backlight", // $B16286
+    "battery",
 	"clock", // #689D6A
 	"custom/poweroff"
     ],
@@ -94,13 +95,9 @@
         "format-disconnected": "Disconnected ⚠",
         "on-click": "nm-connection-editor"
     },
-    "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+    "wireplumber": {
+        "format": "{volume}% {icon}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -110,7 +107,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol"
     },
     "custom/media": {
         "format": "{icon} {}",
