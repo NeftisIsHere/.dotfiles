@@ -26,10 +26,10 @@ window#waybar.hidden {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
-    background-color: #3c3836;
+    background-color: #696361;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: #3c3836;
     color: #ebdbb2;
 }
@@ -48,17 +48,10 @@ window#waybar.hidden {
 #backlight,
 #network,
 #pulseaudio,
-#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
 #custom-poweroff,
-#custom-suspend,
-#mpd {
-    padding: 0 10px;
-    background-color: #282828;
-    color: #ebdbb2;
-}
 
 #window,
 #workspaces {
@@ -75,47 +68,9 @@ window#waybar.hidden {
     margin-right: 0;
 }
 
-#clock {
-    color: #8EC07C;
-}
+
 label:focus {
     background-color: #000000;
-}
-
-#backlight {
-    color: #D3869B;
-    padding-left: 2px;
-    padding-right: 1px;
-}
-
-#network {
-    color: #83A598;
-    padding-left: 2px;
-    padding-right: 5px;
-}
-
-#network.disconnected {
-    background-color: #fbf1c7;
-    color: #9d0006;
-}
-
-#wireplumber {
-    color: #FABD2F;
-    padding-left: 2px;
-    padding-right: 5px;
-}
-
-#wireplumber.muted {
-    background-color: #fbf1c7;
-    color: #af3a03;
-}
-
-#tray {
-}
-
-#tray > .needs-attention {
-    background-color: #fbf1c7;
-    color: #3c3836;
 }
 
 #idle_inhibitor {
@@ -128,57 +83,40 @@ label:focus {
     color: #3c3836;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+#tray {
+    color: #EA6962
+}
+/*
+#tray > .needs-attention {
+    background-color: #fbf1c7;
+    color: #3c3836;
+}
+*/
+
+#wireplumber {
+    color: #98971A;
+    padding-left: 2px;
+    padding-right: 5px;
+}
+#wireplumber.muted {
+    background-color: #fbf1c7;
+    color: #af3a03;
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
+#backlight {
+    color: #D79921;
+    padding-left: 2px;
+    padding-right: 1px;
 }
 
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+#battery {
+    color: #458588
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+#clock {
+    color: #B16286;
 }
 
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #282828;
-    color: #B8BB26;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+#custom-poweroff {
+    color: #689D6A
 }
