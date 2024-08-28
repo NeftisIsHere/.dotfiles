@@ -2,11 +2,11 @@
     "layer": "top",
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 24, // Waybar height (to be removed for auto height)
-    "spacing": 0, // Gaps between modules (4px)
+    "spacing": 1, // Gaps between modules (4px)
     
     "modules-left": [
-        "hyprland/workspaces",
-        "idle_inhibitor"
+        "custom/poweroff",
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "hyprland/window"
@@ -15,24 +15,15 @@
     
     "modules-right": [
         "tray", 
-        //"keyboard-state", 
         "wireplumber", // #98971A
-        //"network", 
         "backlight", // #D79921
         "battery", // #458588
         "clock", // $B16286
-        "custom/poweroff" // #689D6A
+         // #689D6A
+        "custom/swaync"
+
     ],
 
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
    
     "idle_inhibitor": {
         "format": "{icon}",
@@ -41,14 +32,32 @@
             "deactivated": ""
         }
     },
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "custom/swaync": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+        "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+        "dnd-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
+    },
+
     "tray": {
         "spacing": 8
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%d-%m-%Y | %R}",
-        "interval": 60
-    },
+
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": ["", ""]
@@ -67,6 +76,43 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },    
+    "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
 
     "custom/poweroff": {

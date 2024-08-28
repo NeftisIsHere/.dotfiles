@@ -44,6 +44,7 @@ window#waybar.hidden {
     border-bottom: 3px solid #fbf1c7;
 }
 
+#custom-swaync,
 #clock,
 #backlight,
 #network,
@@ -83,7 +84,10 @@ label:focus {
     color: #3c3836;
 }
 
-#tray {
+#custom-swaync {
+    color: #ebdbb2
+}
+#custom-swaync.dnd-notification {
     color: #EA6962
 }
 /*
