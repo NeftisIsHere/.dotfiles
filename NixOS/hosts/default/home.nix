@@ -22,10 +22,11 @@
     pkgs.roboto
     pkgs.liberation_ttf
     pkgs.font-awesome
-    (pkgs.nerdfonts.override { fonts = [ "FiraMono" ]; })
+    
     # Extra
     pkgs.btop
     # pkgs.nwg-look
+    pkgs.zsh
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -53,13 +54,13 @@
       package = pkgs.gruvbox-plus-icons;
       name = "Gruvbox-Plus-Dark";
     };
-  #   gtk3.extraConfig = {
-  #     gtk-application-prefer-dark-theme = true;
-  #   };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
 
-  #   gtk4.extraConfig = {
-  #     gtk-application-prefer-dark-theme = true;
-  #   };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
     cursorTheme.name = "Bibata-Modern-Ice";
   };
 
@@ -92,17 +93,6 @@
     enable = true;
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    history = {
-      size = 10000;
-      path = "${config.xdg.dataHome}/.local/state/zsh/history";
-    };
-    sessionVariables = {
-    };
-  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -178,20 +178,6 @@
     description = "no need";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      htop
-      fastfetch
-    ];
-    
-  };
-
-  # Home manager module
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "jazz" = import ./home.nix;
-    };
-
   };
 
   programs.gnupg.agent = {
