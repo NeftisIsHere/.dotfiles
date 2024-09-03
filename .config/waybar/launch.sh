@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-killall waybar
+pkill waybar
 export dotconf="/home/jazz/.dotfiles/.config"
 # ------------------------------------------------------------------- 
 # Load the configuration
