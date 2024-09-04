@@ -1,23 +1,7 @@
 # --------------------
 # Load personal stuffs
 # --------------------
-# The most important part here
-fastfetch
 
-# just boring stuffs
-if [ -d ~/.dotfiles ]; then
-    for rc in $dotfiles/personal/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
-fi
-unset rc
-# --------------------------------------
-# Lines configured by zsh-newuser-install
-HISTFILE="$XDG_STATE_HOME"/zsh/history
-HISTSIZE=1000
-SAVEHIST=1000
 # --------------
 # Autocompletion
 # --------------
@@ -36,8 +20,30 @@ compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+
 # ----------------
-# Spaceship prompt
+# Global aliases
 # ----------------
-SPACESHIP_PROMPT_ADD_NEWLINE=false
+source "$dotfiles/shells/.global_aliases"
+
+# ------------
+# Yazi wrapper
+# ------------
+function yy() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
+# ----------------
+# Starship prompt
+# ----------------
 eval "$(starship init zsh)"
+
+# ----------------------------
+# The most important part here
+# ----------------------------
+fastfetch

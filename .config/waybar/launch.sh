@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-pkill waybar
-export dotconf="/home/jazz/.dotfiles/.config"
+killall waybar
 # ------------------------------------------------------------------- 
 # Load the configuration
 # ------------------------------------------------------------------- 
-waybar -c "$dotconf"/waybar/config -s "$dotconf"/waybar/style.css
+waybar -c $HOME/.dotfiles/.config/waybar/config -s $HOME/.dotfiles/.config/waybar/style.css
 

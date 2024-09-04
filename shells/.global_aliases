@@ -1,8 +1,8 @@
 alias poweroff='shutdown 0'
 alias systemlogs='journalctl -b'
 
-alias ls='eza --icons -A --group-directories-first --color=auto'
-alias la='eza -la'
+alias ls='eza --icons --almost-all --group-directories-first'
+alias la='eza --long --almost-all --header --total-size'
 
 
 # More color!

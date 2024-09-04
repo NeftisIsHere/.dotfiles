@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-pacman -Syuu --noconfirm
+# pacman -Syuu --noconfirm
 
-pacman -S --needed --noconfirm - < packages-pacman.txt
+# pacman -S --needed --noconfirm - < packages-pacman.txt
 
 # yay installation
 git clone https://aur.archlinux.org/yay.git
