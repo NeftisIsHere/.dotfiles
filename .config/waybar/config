@@ -1,16 +1,16 @@
 {
     "layer": "top",
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
-    "spacing": 1, // Gaps between modules (4px)
+    "position": "top",
+    "height": 24,
+    "spacing": 1,
     
     "modules-left": [
         "custom/poweroff",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "river/tags"
     ],
     "modules-center": [
-        "hyprland/window"
-
+        "river/window"
     ],
     
     "modules-right": [
@@ -21,20 +21,15 @@
         "clock", // $B16286
          // #689D6A
         "custom/swaync"
-
     ],
 
-   
+    "import": [ "$dotconf/waybar/hyprland/modules" ],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         }
-    },
-    "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
 
     "custom/swaync": {
@@ -94,7 +89,7 @@
         "format-alt": "{:%A, %B %d, %Y (%R)}  ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "year",
+                    "mode"          : "month",
                     "mode-mon-col"  : 3,
                     "weeks-pos"     : "right",
                     "on-scroll"     : 1,

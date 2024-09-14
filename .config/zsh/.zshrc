@@ -24,7 +24,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # ----------------
 # Global aliases
 # ----------------
-source "$dotfiles/shells/.global_aliases"
+source "$dotconf/shells/.global_aliases"
 
 # ------------
 # Yazi wrapper
