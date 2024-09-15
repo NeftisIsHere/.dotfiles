@@ -8,7 +8,7 @@
 # /_/   \_\__,_|\__\___/  |____/ \__\__,_|_|   \__|
 # 
 riverctl spawn ~/.config/river/conf/autostart.sh
-
+riverctl spawn ~/.config/river/environment.sh
 riverctl keyboard-layout es
 
 # Customization

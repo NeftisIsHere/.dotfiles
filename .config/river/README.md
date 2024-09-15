@@ -16,6 +16,7 @@ Theming is not done yet and most of the config is barebones.
 - Wifi: networkmanager + nm-applet
 - Audio: Pipewire + Pamixer
 ##### Apps
+- Shell: zsh
 - Terminal: kitty
 - File manager: yazi + nautilus
 - Editor: neovim
@@ -26,7 +27,7 @@ Theming is not done yet and most of the config is barebones.
 #### Important Stuffs
 
 ```
-sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
+sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome zsh zsh-completions
 ```
 
 #### Window manager stuffs
@@ -45,4 +46,16 @@ sudo pacmna -S cliphist wl-clipboard neovim firefox loupe tmux bat btop yazi jq 
 
 ```
 sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-jack pipewire-alsa
+```
+
+#### AUR stuffs
+
+```
+yay -S swaylock-effects
+```
+
+## Theming
+
+```
+yay -S bibata-cursor-theme-bin
 ```
