@@ -1,0 +1,6 @@
+colorz
+icu69-bin
+legcord-bin
+python-pywal16
+wayland-logout
+wlopm
