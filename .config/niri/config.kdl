@@ -4,11 +4,12 @@
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_STYLE_OVERRIDE "kvantum"
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
 }
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "nm-applet"
+
+spawn-at-startup "swww-daemon"
 spawn-sh-at-startup "hypridle -c ~/.dotfiles/.config/hypr/hypridle-niri.conf"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
@@ -46,12 +47,12 @@ cursor {
     xcursor-theme "Bibata-Modern-Classic"
     xcursor-size 24
 
-    // hide-when-typing
+    hide-when-typing
     hide-after-inactive-ms 1000
 }
 
 layout {
-    gaps 6
+    gaps 4
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -61,8 +62,8 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        /*active-color "#98971a"*/
-	width 2
+        active-color "#98971a"
+	width 1
     }
 
     border {
@@ -78,7 +79,7 @@ layout {
         softness 30
         spread 5
         offset x=0 y=5
-        /* color "#0007" */
+        color "#0007"
     }
 
     struts {
@@ -93,7 +94,6 @@ layout {
 hotkey-overlay {
     skip-at-startup
 }
-
 prefer-no-csd
 
 // You can change the path where screenshots are saved.
@@ -102,7 +102,6 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Animation settings.
 animations {
     off
-    // slowdown 3.0
 }
 
 // Open the Waterfox picture-in-picture player as floating by default.
@@ -121,7 +120,7 @@ window-rule {
     max-height 400
 }
 
-/-window-rule {
+window-rule {
     match app-id="steam" title="Friends List"
     open-floating true
     min-height 744
@@ -134,7 +133,7 @@ window-rule {
    open-floating true
 }
 
-/-window-rule {
+window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
 }
@@ -171,7 +170,7 @@ window-rule {
     open-floating true
 }
 
-/-window-rule {
+window-rule {
     match app-id="xdg-desktop-portal-gnome"
     open-floating true
 }
@@ -209,9 +208,11 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run Fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the screen" { spawn-sh "hyprlock -c ~/.cache/wal/hypr/hyprlock || hyprlock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the screen" { spawn-sh "hyprlock -c ~/.cache/wal/hypr/hyprlock.conf || hyprlock"; }
+    Mod+V hotkey-overlay-title="Open Clipboard" { spawn "~/.config/fuzzel/cliphist-fuzzel-img"; }
+    Mod+Shift+B hotkey-overlay-title="Open Emoji Picker" { spawn "bemoji" "-t"; }
 
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"; }
@@ -222,7 +223,6 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
     Mod+O repeat=false { toggle-overview; }
-
     Mod+C repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
@@ -274,15 +274,15 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
 
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-or-expel-window-left; }
@@ -311,8 +311,6 @@ binds {
     Mod+T       { toggle-window-floating; }
     Mod+Shift+T { switch-focus-between-floating-and-tiling; }
 
-    Mod+V hotkey-overlay-title="Open Clipboard" { spawn "~/.config/fuzzel/cliphist-fuzzel-img"; }
-    Mod+Shift+B hotkey-overlay-title="Open Emoji Picker" { spawn "bemoji" "-t"; }
     // Mod+Shift+S hotkey-overlay-title="Color Picker" { niri msg pick-color; }
 
     // Toggle tabbed column display mode.

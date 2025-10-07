@@ -7,6 +7,7 @@ WALLPAPER="$1"
 wal -q -i "$WALLPAPER" --backend colorz
 # wal -q -i "$WALLPAPER" --backend wal
 cp $XDG_CACHE_HOME/wal/niri/niri-colors $dotconf/niri/colors.kdl
+cp $XDG_CACHE_HOME/wal/rmpc/pywal16.ron $dotconf/rmpc/themes/pywal16.ron
 
 systemctl --user restart swaync || { 
   pkill swaync && while pgrep swaync >/dev/null; do sleep 0.1; done && swaync & 

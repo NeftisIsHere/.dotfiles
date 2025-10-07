@@ -29,3 +29,5 @@ PS1='[\u@\h \W]\$ '
 if command -v starship &> /dev/null; then
     eval "$(starship init bash)"
 fi
+
+export PATH=$PATH:/home/jazz/.spicetify
