@@ -4,6 +4,7 @@ export XDG_STATE_HOME="$HOME"/.local/state
 export XDG_CACHE_HOME="$HOME"/.cache
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_USE_PORTAL=1
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export EDITOR=nvim
 export MOZ_GTK_TITLEBAR_DECORATION=client
 # Other Programs

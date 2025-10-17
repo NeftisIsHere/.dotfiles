@@ -62,8 +62,8 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        active-color "#98971a"
-	width 1
+        active-color "#b09b82"
+	width 2
     }
 
     border {
@@ -79,7 +79,8 @@ layout {
         softness 30
         spread 5
         offset x=0 y=5
-        color "#0007"
+        //color "#0007"
+        color "rgba(30,17,12,1.0)"
     }
 
     struts {
@@ -90,7 +91,6 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
 hotkey-overlay {
     skip-at-startup
 }
@@ -101,7 +101,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // Animation settings.
 animations {
-    off
+    //off
 }
 
 // Open the Waterfox picture-in-picture player as floating by default.
@@ -206,7 +206,7 @@ binds {
     Mod+Shift+G { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Mod+Q hotkey-overlay-title="Open Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run Fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the screen" { spawn-sh "hyprlock -c ~/.cache/wal/hypr/hyprlock.conf || hyprlock"; }
     Mod+V hotkey-overlay-title="Open Clipboard" { spawn "~/.config/fuzzel/cliphist-fuzzel-img"; }

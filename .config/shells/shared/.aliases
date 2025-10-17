@@ -18,7 +18,7 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 alias ls='eza --icons --almost-all --group-directories-first'
-alias la='eza --long --almost-all --header --total-size'
+alias la='eza --long --almost-all --group --header --total-size'
 
 # Edit aliases or functions quickly
 alias edit-aliases='$EDITOR $dotconf/shells/shared/.aliases'

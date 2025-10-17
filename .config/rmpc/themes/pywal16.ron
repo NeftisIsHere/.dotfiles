@@ -9,37 +9,37 @@
     text_color: "#c6c3c2",
     tab_bar: (
         enabled: true,
-        active_style: (fg: "#b7a586", modifiers: "Bold"),
-        inactive_style: (fg: "#ab5032", modifiers: ""),
+        active_style: (fg: "#b09b82", modifiers: "Bold"),
+        inactive_style: (fg: "#ac6553", modifiers: ""),
     ),
-    highlighted_item_style: (fg: "#ab5032", modifiers: "Bold"),
-    current_item_style: (fg: "#b7a586", bg: "#ab5032", modifiers: "Bold"),
-    borders_style: (fg: "#ab5032", modifiers: "Bold"),
-    highlight_border_style: (fg: "#ab5032"),
+    highlighted_item_style: (fg: "#ac6553", modifiers: "Bold"),
+    current_item_style: (fg: "#b09b82", bg: "#ac6553", modifiers: "Bold"),
+    borders_style: (fg: "#ac6553", modifiers: "Bold"),
+    highlight_border_style: (fg: "#ac6553"),
     symbols: (song: "󰝚 ", dir: " ", marker: "* ", ellipsis: "..."),
     progress_bar: (
         symbols: ["█", "█", "█"],
-        track_style: (fg: "#1b0f0b"),
-        elapsed_style: (fg: "#ab5032"),
-        thumb_style: (fg: "#ab5032"),
+        track_style: (fg: "#1e110c"),
+        elapsed_style: (fg: "#ac6553"),
+        thumb_style: (fg: "#ac6553"),
     ),
     scrollbar: (
         symbols: ["", "", "", ""],
-        track_style: (fg: "#ab5032"),
-        ends_style: (fg: "#ab5032"),
-        thumb_style: (fg: "#ab5032"),
+        track_style: (fg: "#ac6553"),
+        ends_style: (fg: "#ac6553"),
+        thumb_style: (fg: "#ac6553"),
     ),
     song_table_format: [
         (
-            prop: (kind: Property(Title), style: (fg: "#749fa0"),
-                highlighted_item_style: (fg: "#1b0f0b", modifiers: "Bold"),
+            prop: (kind: Property(Title), style: (fg: "#c0bba8"),
+                highlighted_item_style: (fg: "#1e110c", modifiers: "Bold"),
                 default: (kind: Property(Filename), style: (fg: "gray"),)
             ),
             width: "70%",
         ),
         (
-            prop: (kind: Property(Album), style: (fg: "#ab5032"),
-                default: (kind: Text("Unknown Album"), style: (fg: "#749fa0"))
+            prop: (kind: Property(Album), style: (fg: "#ac6553"),
+                default: (kind: Text("Unknown Album"), style: (fg: "#c0bba8"))
             ),
             width: "30%",
         ),
@@ -96,7 +96,7 @@
         rows: [
             (
                 left: [
-                    (kind: Property(Status(StateV2(playing_label: " ", paused_label: "❚❚", stopped_label: "❚❚"))), style: (fg: "#b7a586", modifiers: "Bold")),
+                    (kind: Property(Status(StateV2(playing_label: " ", paused_label: "❚❚", stopped_label: "❚❚"))), style: (fg: "#b09b82", modifiers: "Bold")),
                 ],
                 center: [
                     (kind: Property(Song(Title)), style: (fg: "#c6c3c2",modifiers: "Bold"),
@@ -104,20 +104,20 @@
                     )
                 ],
                 right: [
-                    (kind: Text("Vol: "), style: (fg: "#b7a586", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "#b7a586", modifiers: "Bold")),
-                    (kind: Text("% "), style: (fg: "#b7a586", modifiers: "Bold"))
+                    (kind: Text("Vol: "), style: (fg: "#b09b82", modifiers: "Bold")),
+                    (kind: Property(Status(Volume)), style: (fg: "#b09b82", modifiers: "Bold")),
+                    (kind: Text("% "), style: (fg: "#b09b82", modifiers: "Bold"))
                 ]
             ),
             (
                 left: [
                     (kind: Property(Status(Elapsed)),style: (fg: "#c6c3c2")),
-                    (kind: Text("/"),style: (fg: "#1b0f0b")),
+                    (kind: Text("/"),style: (fg: "#1e110c")),
                     (kind: Property(Status(Duration)),style: (fg: "#c6c3c2")),
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#b7a586", modifiers: "Bold"),
-                        default: (kind: Text("Unknown Artist"), style: (fg: "#ab5032", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "#b09b82", modifiers: "Bold"),
+                        default: (kind: Text("Unknown Artist"), style: (fg: "#ac6553", modifiers: "Bold"))
                     ),
                 ],
                 right: [
@@ -126,7 +126,7 @@
                             active_style: (fg: "#c6c3c2", modifiers: "Bold"),
                             separator_style: (fg: "#c6c3c2")))
                         ),
-                        style: (fg: "#ab5032")
+                        style: (fg: "#ac6553")
                     ),
                 ]
             ),
